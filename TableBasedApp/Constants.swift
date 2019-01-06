@@ -2,7 +2,10 @@ import Foundation
 import UIKit
 
 class Constants {
+    // Customize
     static var countOfItemsInRow:Int = 2
+    static var firstRowColor:UIColor = .black
+    static var secondRowColor:UIColor = UIColor(red: CGFloat(200.0/255.0), green: CGFloat(204.0/255.0), blue: CGFloat(204.0/255.0), alpha: CGFloat(0.12))
     
     // First section (you can add items in TableViewController)
     static var sectionLifetimeStats = NSLocalizedString("lifetimeStats", comment: "")
@@ -19,5 +22,5 @@ class Constants {
     
     
     static let placeholder = "iconSteps"
-    static var dark = UIColor(red: CGFloat(200.0/255.0), green: CGFloat(204.0/255.0), blue: CGFloat(204.0/255.0), alpha: CGFloat(0.12))
+    
 }

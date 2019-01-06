@@ -21,7 +21,7 @@ class CollectionController: UICollectionView, UICollectionViewDataSource, UIColl
         return Int(numberOfItemsInRow) * Int(count)
     }
     
-    var newBackgroundColor:UIColor = Constants.dark
+    var newBackgroundColor:UIColor = Constants.secondRowColor
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionsItemCell.identifier, for: indexPath as IndexPath) as! CollectionsItemCell
@@ -41,10 +41,10 @@ class CollectionController: UICollectionView, UICollectionViewDataSource, UIColl
         }
         if(indexPath.row % Int(numberOfItemsInRow) == 0) {
             cell.separator.isHidden = true
-            if (newBackgroundColor == .black) {
-                newBackgroundColor = Constants.dark
+            if (newBackgroundColor == Constants.firstRowColor) {
+                newBackgroundColor = Constants.secondRowColor
             } else {
-                newBackgroundColor = .black
+                newBackgroundColor = Constants.firstRowColor
             }
         }
         cell.backgroundColor = newBackgroundColor

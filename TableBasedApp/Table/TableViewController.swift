@@ -67,7 +67,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.backgroundView?.backgroundColor = .black
+        header.backgroundView?.backgroundColor = Constants.firstRowColor
         header.textLabel?.textColor = UIColor.white
         header.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
     }
@@ -83,8 +83,8 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        let footerText:UILabel = UILabel(frame: CGRect(x: 20, y: 20, width: tableView.frame.width - 20, height: 0))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let footerText:UILabel = UILabel(frame: CGRect(x: 20, y: 0, width: tableView.frame.width - 20, height: 0))
         let sectionModel = sections[section] as SectionModel
         let footerOfSection = sectionModel.sectionFooter
         footerText.text = footerOfSection
@@ -92,11 +92,11 @@ class TableViewController: UITableViewController {
         footerText.font = UIFont.systemFont(ofSize: 13)
         footerText.numberOfLines = 0;
         footerText.lineBreakMode = .byWordWrapping
-        footerText.backgroundColor = .black
         footerText.sizeToFit()
+        view.backgroundColor = Constants.firstRowColor
         view.addSubview(footerText)
         return view
     }
- 
+    
 }
 
