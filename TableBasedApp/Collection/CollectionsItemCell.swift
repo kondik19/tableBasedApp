@@ -1,11 +1,3 @@
-//
-//  CollectionsItemCell.swift
-//  FakeStepsApp
-//
-//  Created by Konrad Cygal on 04.01.19.
-//  Copyright © 2019 Konrad Cygal. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -16,6 +8,7 @@ class CollectionsItemCell: UICollectionViewCell {
     @IBOutlet var numberLabel: UILabel!
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var separator: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

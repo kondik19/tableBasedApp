@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  FakeStepsApp
-//
-//  Created by Konrad Cygal on 04.01.19.
-//  Copyright © 2019 Konrad Cygal. All rights reserved.
-//
-
 import UIKit
 
 class CollectionController: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -27,12 +19,10 @@ class CollectionController: UICollectionView, UICollectionViewDataSource, UIColl
         // fill the row with empty items (background color)
         let count:Double = (Double(self.items.count)/Double(numberOfItemsInRow)).rounded(.up)
         return Int(numberOfItemsInRow) * Int(count)
-        
     }
     
-    var newBackgroundColor:UIColor = .darkGray
+    var newBackgroundColor:UIColor = Constants.dark
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionsItemCell.identifier, for: indexPath as IndexPath) as! CollectionsItemCell
         if (indexPath.item<items.count) {
@@ -47,15 +37,16 @@ class CollectionController: UICollectionView, UICollectionViewDataSource, UIColl
             cell.textLabel.isHidden = true
             cell.numberLabel.isHidden = true
             cell.imageView.isHidden = true
+            cell.separator.isHidden = true
         }
         if(indexPath.row % Int(numberOfItemsInRow) == 0) {
+            cell.separator.isHidden = true
             if (newBackgroundColor == .black) {
-                newBackgroundColor = .darkGray
+                newBackgroundColor = Constants.dark
             } else {
                 newBackgroundColor = .black
             }
         }
-        
         cell.backgroundColor = newBackgroundColor
         return cell
     }
@@ -65,6 +56,13 @@ class CollectionController: UICollectionView, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width/numberOfItemsInRow, height: 120)
+        // If width of screen is odd
+        let width:CGFloat
+        if (indexPath.row % Int(numberOfItemsInRow) != 0) {
+            width = UIScreen.main.bounds.width/numberOfItemsInRow - 1/numberOfItemsInRow
+        } else {
+            width = UIScreen.main.bounds.width/numberOfItemsInRow + 1/numberOfItemsInRow
+        }
+        return CGSize(width: width, height: 100)
     }
 }

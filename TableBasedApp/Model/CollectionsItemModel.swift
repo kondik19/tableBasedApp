@@ -1,11 +1,3 @@
-//
-//  CollectionsItemModel.swift
-//  FakeStepsApp
-//
-//  Created by Konrad Cygal on 04.01.19.
-//  Copyright © 2019 Konrad Cygal. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import FriendlyNumbers

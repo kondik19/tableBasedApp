@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  TableBasedApp
-//
-//  Created by Konrad Cygal on 05.01.19.
-//  Copyright © 2019 Konrad Cygal. All rights reserved.
-//
-
 import UIKit
 
 class TableViewController: UITableViewController {
@@ -42,6 +34,8 @@ class TableViewController: UITableViewController {
         self.items.append(item)
         sections.append(SectionModel.init(name: Constants.sectionRecords, items: self.items, footer: ""))
         self.items.removeAll()
+        self.tableView.rowHeight = CGFloat((sections[0].colletionsItems.count/Constants.countOfItemsInRow) * 100)
+
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -86,6 +80,12 @@ class TableViewController: UITableViewController {
         footer.textLabel?.font = UIFont.systemFont(ofSize: 12)
         footer.textLabel?.frame = footer.frame
     }
+    
+    /*verride func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let height = (sections[indexPath.section].colletionsItems.count/Constants.countOfItemsInRow) * 20
+        return CGFloat.init(height)
+    }
+ */
     
 }
 

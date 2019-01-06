@@ -1,15 +1,8 @@
-//
-//  Data.swift
-//  TableBasedApp
-//
-//  Created by Konrad Cygal on 05.01.19.
-//  Copyright © 2019 Konrad Cygal. All rights reserved.
-//
-
 import Foundation
+import UIKit
 
 class Constants {
-    static var countOfItemsInRow = 2
+    static var countOfItemsInRow = 3 // number > 0
     static var sectionLifetimeStats = NSLocalizedString("lifetimeStats", comment: "")
     static var sectionRecords = NSLocalizedString("records", comment: "")
 
@@ -21,4 +14,5 @@ class Constants {
     static var xsteps = NSLocalizedString("xsteps", comment: "")
 
     static let placeholder = "iconSteps"
+    static var dark = UIColor(red: CGFloat(200.0/255.0), green: CGFloat(204.0/255.0), blue: CGFloat(204.0/255.0), alpha: CGFloat(0.12))
 }

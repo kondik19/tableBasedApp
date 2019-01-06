@@ -1,11 +1,3 @@
-//
-//  TableCell.swift
-//  TableBasedApp
-//
-//  Created by Konrad Cygal on 05.01.19.
-//  Copyright © 2019 Konrad Cygal. All rights reserved.
-//
-
 import Foundation
 import UIKit
 

@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  TableBasedApp
-//
-//  Created by Konrad Cygal on 05.01.19.
-//  Copyright © 2019 Konrad Cygal. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -16,6 +8,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
+        UINavigationBar.appearance().shadowImage = UIImage()
         return true
     }
 

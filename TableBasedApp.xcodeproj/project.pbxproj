@@ -175,8 +175,8 @@
 		1BCF3A9321E0C743003907D3 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				1BCF3A8E21E0B9A8003907D3 /* CollectionsItemCell.swift */,
 				1BCF3A8A21E0B915003907D3 /* CollectionController.swift */,
+				1BCF3A8E21E0B9A8003907D3 /* CollectionsItemCell.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
