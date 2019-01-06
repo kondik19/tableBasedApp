@@ -3,7 +3,7 @@ import UIKit
 class CollectionController: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var items: [CollectionsItemModel] = []
-    let numberOfItemsInRow:CGFloat = CGFloat(Constants.countOfItemsInRow)
+    var numberOfItemsInRow:CGFloat = CGFloat(Constants.countOfItemsInRow > 0 ? Constants.countOfItemsInRow : 1)
     
     override func awakeFromNib() {
         self.delegate = self
@@ -52,17 +52,49 @@ class CollectionController: UICollectionView, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Clicked #\(indexPath.item)!")
+        print("Tapped #\(indexPath.item)!")
     }
     
+    var x = 0
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // If width of screen is odd
-        let width:CGFloat
-        if (indexPath.row % Int(numberOfItemsInRow) != 0) {
-            width = UIScreen.main.bounds.width/numberOfItemsInRow - 1/numberOfItemsInRow
-        } else {
-            width = UIScreen.main.bounds.width/numberOfItemsInRow + 1/numberOfItemsInRow
+        
+        var width:CGFloat = collectionView.frame.size.width
+        if (items.count < Int(numberOfItemsInRow)) {
+            numberOfItemsInRow = CGFloat(items.count)
         }
+        
+        width = (collectionView.frame.size.width/numberOfItemsInRow).rounded(.down)
+        // remove break between cells if must
+        if (x == 0) {
+            x = Int(collectionView.frame.size.width - (numberOfItemsInRow * width))
+        }
+        
+        if(indexPath.row % Int(numberOfItemsInRow) == 0) {
+            width = width + CGFloat(x)
+            x = 0
+        }
+        
         return CGSize(width: width, height: 100)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 1.0) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CollectionsItemCell {
+                cell.imageView.transform = .init(scaleX: 0.5, y: 0.5)
+                cell.numberLabel.transform = .init(scaleX: 1.5, y: 1.5)
+                cell.contentView.backgroundColor = UIColor(red: 0.25, green: 1.95, blue: 0.95, alpha: 0.7)
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CollectionsItemCell {
+                cell.imageView.transform = .identity
+                cell.numberLabel.transform = .identity
+                cell.contentView.backgroundColor = .clear
+            }
+        }
     }
 }

@@ -1,16 +1,3 @@
-PODS:
-  - FriendlyNumbers (0.1)
-
-DEPENDENCIES:
-  - FriendlyNumbers
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - FriendlyNumbers
-
-SPEC CHECKSUMS:
-  FriendlyNumbers: 5d9acd9934798174c3bcf75a7115ec35595b24cd
-
-PODFILE CHECKSUM: 51bd3af00585240bda1408407d4a3ea3cc79f6a2
+PODFILE CHECKSUM: e149faac94ccc793735df93f730eea1a8d764592
 
 COCOAPODS: 1.5.3

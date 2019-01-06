@@ -1,11 +1,11 @@
-/* 
-  Localizable.strings
-  TableBasedApp
 
-  Created by Konrad Cygal on 05.01.19.
-  Copyright © 2019 Konrad Cygal. All rights reserved.
-*/
-"exampleText" = "bbb";
 "lifetimeStats" = "Lifetime Stats";
-"records" = "Records";
+"lifetimeFooter" = "Impressive. You've tracked more that 4 milion steps with StepsApp. Keep it up!";
+"steps" = "Steps";
+"distance" = "Distance";
+"activeTime" = "Active Time";
+"kcal" = "KCAL";
+"floors" = "Floors";
+"xsteps" = "5,000 Steps";
 
+"records" = "Records";

@@ -1,6 +1,5 @@
 import Foundation
 import UIKit
-import FriendlyNumbers
 
 class CollectionsItemModel: NSObject {
     var icon:UIImage?
@@ -8,7 +7,7 @@ class CollectionsItemModel: NSObject {
     var number:Int64 = 0
     var type:ItemType = .number
     var numberReadable:String = "0"
-    
+    var date:Date!
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -39,6 +38,27 @@ class CollectionsItemModel: NSObject {
         if (type == .xsteps) {
             self.numberReadable = Int(number).formatNumber() + "x"
         }
+    }
+    
+    init(iconName:String, number: Int64, type: ItemType, date: Date) {
+        self.icon = UIImage(named: iconName)
+        self.icon = self.icon?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        self.number = number
+        
+        if (type == .distance) {
+            self.numberReadable = MeasurementFormatter().string(from: Measurement(value: Double(number), unit: UnitLength.meters)) as String
+        }
+        if (type == .number) {
+            self.numberReadable = Int(number).formatNumber()
+        }
+        if (type == .time) {
+            self.numberReadable = Int(number).formatTime()
+        }
+        if (type == .xsteps) {
+            self.numberReadable = Int(number).formatNumber() + "x"
+        }
+        self.date = date
+        self.title = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
     }
     
     enum ItemType {

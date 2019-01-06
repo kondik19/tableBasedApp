@@ -6,7 +6,6 @@ target 'TableBasedApp' do
   use_frameworks!
 
   # Pods for TableBasedApp
-  pod 'FriendlyNumbers'
   
   target 'TableBasedAppTests' do
     inherit! :search_paths
