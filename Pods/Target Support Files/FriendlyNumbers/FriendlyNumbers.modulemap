@@ -1,6 +1,0 @@
-framework module FriendlyNumbers {
-  umbrella header "FriendlyNumbers-umbrella.h"
-
-  export *
-  module * { export * }
-}
