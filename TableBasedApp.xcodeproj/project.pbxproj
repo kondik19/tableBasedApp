@@ -61,7 +61,7 @@
 		1BCF3A8E21E0B9A8003907D3 /* CollectionsItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsItemCell.swift; sourceTree = "<group>"; };
 		1BCF3A9021E0C4B0003907D3 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		1BCF3A9421E0DDA1003907D3 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
-		1BCF3AAC21E0F02E003907D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1BE9AE3421E25BFB00E0AA36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,7 +359,7 @@
 		1BCF3A6021E0A925003907D3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BCF3AAC21E0F02E003907D3 /* en */,
+				1BE9AE3421E25BFB00E0AA36 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
